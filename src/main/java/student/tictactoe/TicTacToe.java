@@ -54,11 +54,12 @@ public class TicTacToe {
         return Evaluation.NoWinner;
     }
 
-    // Invalid Input: Let X be number of Xs and O be number of Os. If X >= O + 2 or O > X, then the input is invalid.
-    // No Winner: The Board is filled up with 5 Xs and 4 Os but there exists no three-in-a-rows.
-    // X Wins:
-    // O Wins:
-    // Unreachable State: Instead of trying to determine whether a state is unreachable, check whether the board is reachable and assume all other cases are unreachable.
+    // 1. Invalid Input: Let X be number of Xs and O be number of Os. If X >= O + 2 or O > X, then the input is invalid.
+    // 2. No Winner: The Board is filled up with 5 Xs and 4 Os but there exists no three-in-a-rows.
+    // 3. X Wins:
+    // 4. O Wins:
+    // 6. Unreachable State: If both X and O win, then the state is unreachable
+    // If the Board is filled, but there is a
     // Questions: Are there any Unreachable States where the board is not filled?
     // What are the Boundary Cases?
 }
