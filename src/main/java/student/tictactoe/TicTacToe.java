@@ -58,5 +58,7 @@ public class TicTacToe {
     // No Winner: The Board is filled up with 5 Xs and 4 Os but there exists no three-in-a-rows.
     // X Wins:
     // O Wins:
-    // Unreachable State: Instead of trying to determine whether a state is unreachable, check whether the board is reachable and assume all other cases are unreachable
+    // Unreachable State: Instead of trying to determine whether a state is unreachable, check whether the board is reachable and assume all other cases are unreachable.
+    // Questions: Are there any Unreachable States where the board is not filled?
+    // What are the Boundary Cases?
 }
