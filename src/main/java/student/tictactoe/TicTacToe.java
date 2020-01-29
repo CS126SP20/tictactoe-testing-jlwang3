@@ -24,13 +24,31 @@ public class TicTacToe {
         }
         // Check for X win by checking all rows, columns, and diagonals
         if (((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X'))
-            || ((BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X'))
-        {
+                || ((BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X'))
+                || ((BOARD[6] == 'x' || BOARD[6] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X'))
+            || ((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X'))
+                || ((BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X'))
+                || ((BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X'))
 
+                || ((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X'))
+                || ((BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X'))
+               )
+        {
+            return Evaluation.Xwins;
         }
         // Check for O win by checking all rows, columns, and diagonals
-        if () {
+        if (((BOARD[0] == 'o' || BOARD[0] == 'O') && (BOARD[1] == 'o' || BOARD[1] == 'O') && (BOARD[2] == 'o' || BOARD[2] == 'O'))
+                || ((BOARD[3] == 'o' || BOARD[3] == 'O') && (BOARD[4] == 'o' || BOARD[4] == 'O') && (BOARD[5] == 'o' || BOARD[5] == 'O'))
+                || ((BOARD[6] == 'o' || BOARD[6] == 'O') && (BOARD[7] == 'o' || BOARD[7] == 'O') && (BOARD[8] == 'o' || BOARD[8] == 'O'))
+                || ((BOARD[0] == 'o' || BOARD[0] == 'O') && (BOARD[3] == 'o' || BOARD[3] == 'O') && (BOARD[6] == 'o' || BOARD[6] == 'O'))
+                || ((BOARD[1] == 'o' || BOARD[1] == 'O') && (BOARD[4] == 'o' || BOARD[4] == 'O') && (BOARD[7] == 'o' || BOARD[7] == 'O'))
+                || ((BOARD[2] == 'o' || BOARD[2] == 'O') && (BOARD[5] == 'o' || BOARD[5] == 'O') && (BOARD[8] == 'o' || BOARD[8] == 'O'))
 
+                || ((BOARD[0] == 'o' || BOARD[0] == 'O') && (BOARD[4] == 'o' || BOARD[4] == 'O') && (BOARD[8] == 'o' || BOARD[8] == 'O'))
+                || ((BOARD[2] == 'o' || BOARD[2] == 'O') && (BOARD[4] == 'o' || BOARD[4] == 'O') && (BOARD[6] == 'o' || BOARD[6] == 'O'))
+        )
+        {
+            return Evaluation.Owins;
         }
     // Else... No Winner
         return Evaluation.NoWinner;
