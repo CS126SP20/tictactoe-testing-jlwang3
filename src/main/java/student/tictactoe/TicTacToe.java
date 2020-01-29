@@ -58,5 +58,5 @@ public class TicTacToe {
     // No Winner: The Board is filled up with 5 Xs and 4 Os but there exists no three-in-a-rows.
     // X Wins:
     // O Wins:
-    // Unreachable State: Save for later
+    // Unreachable State: Instead of trying to determine whether a state is unreachable, check whether the board is reachable and assume all other cases are unreachable
 }
