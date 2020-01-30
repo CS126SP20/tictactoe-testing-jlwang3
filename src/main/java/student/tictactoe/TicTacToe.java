@@ -48,7 +48,32 @@ public class TicTacToe {
         }
         // 2. Configurations in which X "wins twice"
         // Note: There are no such configurations for O since O has only 4 moves
-        
+        // In Order of rows, columns, and diagonals
+        if (((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X'))
+                || ((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X'))
+                || ((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X'))
+                || ((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X'))
+                || ((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X'))
+            || ((BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X') && (BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X'))
+                || ((BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X') && (BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X'))
+                || ((BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X'))
+                || ((BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X') && (BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X'))
+                || ((BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X'))
+            || ((BOARD[6] == 'x' || BOARD[6] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X') && (BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[3] == 'x' || BOARD[3] == 'X'))
+                || ((BOARD[6] == 'x' || BOARD[6] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X') && (BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X'))
+                || ((BOARD[6] == 'x' || BOARD[6] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X'))
+                || ((BOARD[6] == 'x' || BOARD[6] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X') && (BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X'))
+                || ((BOARD[6] == 'x' || BOARD[6] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X'))
+            || ((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X'))
+                || ((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X'))
+                || ((BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X') && (BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X'))
+                || ((BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[7] == 'x' || BOARD[7] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X'))
+                || ((BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X') && (BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X'))
+                || ((BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X') && (BOARD[8] == 'x' || BOARD[8] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X'))
+        )
+        {
+            return Evaluation.UnreachableState;
+        }
         // Check for X win by checking all rows, columns, and diagonals
         if (((BOARD[0] == 'x' || BOARD[0] == 'X') && (BOARD[1] == 'x' || BOARD[1] == 'X') && (BOARD[2] == 'x' || BOARD[2] == 'X'))
                 || ((BOARD[3] == 'x' || BOARD[3] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[5] == 'x' || BOARD[5] == 'X'))
