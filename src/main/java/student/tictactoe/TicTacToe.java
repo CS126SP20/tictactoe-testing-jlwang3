@@ -86,6 +86,9 @@ public class TicTacToe {
                 || ((BOARD[2] == 'x' || BOARD[2] == 'X') && (BOARD[4] == 'x' || BOARD[4] == 'X') && (BOARD[6] == 'x' || BOARD[6] == 'X'))
                )
         {
+            if (numberX <= numberO) {
+                return Evaluation.UnreachableState;
+            }
             return Evaluation.Xwins;
         }
         // Check for O win by checking all rows, columns, and diagonals
@@ -100,6 +103,9 @@ public class TicTacToe {
                 || ((BOARD[2] == 'o' || BOARD[2] == 'O') && (BOARD[4] == 'o' || BOARD[4] == 'O') && (BOARD[6] == 'o' || BOARD[6] == 'O'))
         )
         {
+            if (numberX >= numberO + 1) {
+                return Evaluation.UnreachableState;
+            }
             return Evaluation.Owins;
         }
     // Else... No Winner
