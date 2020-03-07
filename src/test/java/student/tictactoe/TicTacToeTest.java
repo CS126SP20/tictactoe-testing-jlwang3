@@ -31,7 +31,7 @@ public class TicTacToeTest {
 
     @Test
     public void OWinsBoard() throws Exception {
-        assertEquals(Evaluation.Owins, TicTacToe.evaluateBoard("XXO.XO.O.."));
+        assertEquals(Evaluation.Owins, TicTacToe.evaluateBoard("XXO.XO..O"));
     }
 
     @Test

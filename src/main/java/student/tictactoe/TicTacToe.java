@@ -2,6 +2,7 @@ package student.tictactoe;
 
 import student.tictactoe.Evaluation;
 
+import javax.sql.rowset.spi.XmlWriter;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +24,20 @@ public class TicTacToe {
         if (isUnreachableState()) {
             return Evaluation.UnreachableState;
         }
+
+        try {
+            if (threeInARow().get('X') > 0) {
+                return Evaluation.Xwins;
+            }
+        } catch (NullPointerException e) {}
+
+        try {
+            if (threeInARow().get('O') > 0) {
+                return Evaluation.Owins;
+            }
+        } catch (NullPointerException e) {}
+
+        return Evaluation.NoWinner;
     }
 
     /**
@@ -35,30 +50,43 @@ public class TicTacToe {
 
         for (int i = 0; i < boardSize; i++) {
             if (board.charAt(boardSize * i) == 'X' && board.charAt(boardSize * i + 1) == 'X' && board.charAt(boardSize * i + 2) == 'X') {
-                freqOfXO.put('X', (int) freqOfXO.get('X') + 1);
+                try {
+                    freqOfXO.put('X', (int) freqOfXO.get('X') + 1);
+                } catch (NullPointerException e) {freqOfXO.put('X', 1);}
             }
             if (board.charAt(boardSize * i) == 'O' && board.charAt(boardSize * i + 1) == 'O' && board.charAt(boardSize * i + 2) == 'O') {
-                freqOfXO.put('O', (int) freqOfXO.get('O') + 1);
+                try {
+                    freqOfXO.put('O', (int) freqOfXO.get('O') + 1);
+                } catch (NullPointerException e) {freqOfXO.put('O', 1);}
             }
         }
 
         for (int i = 0; i < boardSize; i++) {
             if (board.charAt(boardSize * 0 + i) == 'X' && board.charAt(boardSize * 1 + i) == 'X' && board.charAt(boardSize * 2 + i) == 'X') {
-                freqOfXO.put('X', (int) freqOfXO.get('X') + 1);
+                try {
+                    freqOfXO.put('X', (int) freqOfXO.get('X') + 1);
+                } catch (NullPointerException e) {freqOfXO.put('X', 1);}
             }
-            if (board.charAt(boardSize * 0 + i) == 'O' && board.charAt() == 'O' && board.charAt(boardSize * 2 + i) == 'O') {
-                freqOfXO.put('O', (int) freqOfXO.get('O') + 1);
+            if (board.charAt(boardSize * 0 + i) == 'O' && board.charAt(boardSize * 1 + i) == 'O' && board.charAt(boardSize * 2 + i) == 'O') {
+                try {
+                    freqOfXO.put('O', (int) freqOfXO.get('O') + 1);
+                } catch (NullPointerException e) {freqOfXO.put('O', 1);}
             }
         }
 
         if ((board.charAt(0) == 'X' && board.charAt(boardLength / 2) == 'X' && board.charAt(boardLength - 1) == 'X')
                 || (board.charAt(boardSize - 1) == 'X' && board.charAt(boardLength / 2) == 'X' && board.charAt(boardSize * (boardSize - 1)) == 'X')) {
-            freqOfXO.put('X', (int) freqOfXO.get('X') + 1);
+            try {
+                freqOfXO.put('X', (int) freqOfXO.get('X') + 1);
+            } catch (NullPointerException e) {freqOfXO.put('X', 1);}
         }
         if ((board.charAt(0) == 'O' && board.charAt(boardLength / 2) == 'O' && board.charAt(boardLength - 1) == 'O')
                 || (board.charAt(boardSize - 1) == 'O' && board.charAt(boardLength / 2) == 'O' && board.charAt(boardSize * (boardSize - 1)) == 'O')) {
-            freqOfXO.put('O', (int) freqOfXO.get('O') + 1);
+            try {
+                freqOfXO.put('O', (int) freqOfXO.get('O') + 1);
+            } catch (NullPointerException e) {freqOfXO.put('O', 1);}
         }
+        return freqOfXO;
     }
 
     /**
@@ -82,15 +110,21 @@ public class TicTacToe {
         if (x != o && x != o + 1) {
             return true;
         }
-        if (x == o && threeInARow().get('X') > 0) {
-            return true;
-        }
-        if (x == o + 1 && threeInARow().get('O') > 0) {
-            return true;
-        }
-        if (threeInARow().get('X') > 1 || threeInARow().get('O') > 1) {
-            return true;
-        }
+        try {
+            if (x == o && threeInARow().get('X') > 0) {
+                return true;
+            }
+        } catch (NullPointerException e) {}
+        try {
+            if (x == o + 1 && threeInARow().get('O') > 0) {
+                return true;
+            }
+        } catch (NullPointerException e) {}
+        try {
+            if (threeInARow().get('X') > 1 || threeInARow().get('O') > 1) {
+                return true;
+            }
+        } catch (NullPointerException e) {}
         return false;
     }
 }
